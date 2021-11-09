@@ -1,20 +1,4 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Time right now is: </title>
-<script>
-var time = new Date();
-console.log(time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds());
-</script>
-</head>
-<body>
-</body>
-</html>
-<html lang="en">
-   
-<script>setInterval(() => {
+setInterval(() => {
     d = new Date(); //object of date()
     hr = d.getHours();
     min = d.getMinutes();
@@ -26,4 +10,4 @@ console.log(time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds())
     hour.style.transform = `rotate(${hr_rotation}deg)`;
     minute.style.transform = `rotate(${min_rotation}deg)`;
     second.style.transform = `rotate(${sec_rotation}deg)`;
-}, 1000);</script> 
+}, 1000);
