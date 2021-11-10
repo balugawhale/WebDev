@@ -108,20 +108,62 @@
                         <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Edit These Items in your Menu ↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
          
 
-<script src="style.css"></script>
-
-<style>
+                    </div>
+                    <div class="navbar-nav ml-auto">
+                        <a href="#" class="nav-item nav-link disabled"></a>
+                    </div>
+                </div>
+            </nav>
+        </menu>
+        <!---------------------------------- End the nav-bar ------------------------------------->
+        
+        <script>
+            let d = new Date();
+            document.body.innerHTML = "<h1>Time right now is:  " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds()
+            "</h1>"
+            
+            </script>
+       
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <div id="clockContainer">
+        <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="second"></div>
+    </div>
+</body>
+</html>
+<script>
+    setInterval(() => {
+        d = new Date(); //object of date()
+        hr = d.getHours();
+        min = d.getMinutes();
+        sec = d.getSeconds();
+        hr_rotation = 30 * hr + min / 2; //converting current time
+        min_rotation = 6 * min;
+        sec_rotation = 6 * sec;
+      
+        hour.style.transform = `rotate(${hr_rotation}deg)`;
+        minute.style.transform = `rotate(${min_rotation}deg)`;
+        second.style.transform = `rotate(${sec_rotation}deg)`;
+    }, 1000);
+    </script> 
+ <style>
  #clockContainer {
     position: relative;
     margin: auto;
-    height: 40vw;
+    height: 29vw;
     /*to make the height and width responsive*/
     width: 40vw;
-    background: url(https://media.geeksforgeeks.org/wp-content/uploads/20210302161254/imgonlinecomuaCompressToSizeOmNATjUMFKw-300×300.jpg) no-repeat;
+    background: url(data:image/png;base64,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) no-repeat;
     /*setting our background image*/
     background-size: 100%;
-}
-  
+} 
 #hour,
 #minute,
 #second {
@@ -154,11 +196,11 @@
     left: 49.25%;
     opacity: 0.8;
 }
-
 </style>
+ 
      <footer>
         <p>Contact me here</p>
-          <p><a>226749@shakopeeschools.org</a></p>":" + d.getSeconds()
+          <p><a>226749@shakopeeschools.org</a></p>
         </footer>
         
             </html>
